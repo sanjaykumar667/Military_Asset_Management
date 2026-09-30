@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 function Assets() {
   const [assets, setAssets] = useState([]);
@@ -19,7 +20,7 @@ function Assets() {
   const fetchAssets = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/assets",
+        `${API_BASE_URL}/api/assets`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -46,7 +47,7 @@ function Assets() {
   const fetchBases = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/bases",
+        `${API_BASE_URL}/api/bases`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -78,7 +79,7 @@ function Assets() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/assets",
+        `${API_BASE_URL}/api/assets`,
         {
           method: "POST",
 

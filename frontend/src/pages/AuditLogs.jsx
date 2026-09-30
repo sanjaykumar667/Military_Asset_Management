@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 function AuditLogs() {
   const [logs, setLogs] = useState([]);
@@ -11,7 +12,7 @@ function AuditLogs() {
   const fetchAuditLogs = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/audit-logs",
+        `${API_BASE_URL}/api/audit-logs`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

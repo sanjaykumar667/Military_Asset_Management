@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_BASE_URL } from "./config";
 import "./App.css";
 
 import Dashboard from "./pages/Dashboard";
@@ -29,7 +30,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/auth/login",
+        `${API_BASE_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {

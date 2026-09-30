@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 function Assignments() {
   const [assignments, setAssignments] = useState([]);
@@ -20,7 +21,7 @@ function Assignments() {
   const fetchAssignments = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/assignments",
+        `${API_BASE_URL}/api/assignments`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -45,7 +46,7 @@ function Assignments() {
   const fetchAssets = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/assets",
+        `${API_BASE_URL}/api/assets`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -67,7 +68,7 @@ function Assignments() {
   const fetchBases = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/bases",
+        `${API_BASE_URL}/api/bases`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -108,7 +109,7 @@ function Assignments() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/assignments",
+        `${API_BASE_URL}/api/assignments`,
         {
           method: "POST",
 

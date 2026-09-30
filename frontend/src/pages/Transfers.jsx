@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 function Transfers() {
   const [transfers, setTransfers] = useState([]);
@@ -20,7 +21,7 @@ function Transfers() {
   const fetchTransfers = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/transfers",
+        `${API_BASE_URL}/api/transfers`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -45,7 +46,7 @@ function Transfers() {
   const fetchAssets = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/assets",
+        `${API_BASE_URL}/api/assets`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -67,7 +68,7 @@ function Transfers() {
   const fetchBases = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/bases",
+        `${API_BASE_URL}/api/bases`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -113,7 +114,7 @@ function Transfers() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/transfers",
+        `${API_BASE_URL}/api/transfers`,
         {
           method: "POST",
 

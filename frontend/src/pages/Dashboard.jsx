@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(null);
@@ -22,7 +23,7 @@ function Dashboard() {
     const fetchBases = async () => {
       try {
         const response = await fetch(
-          "http://127.0.0.1:5000/api/bases",
+          `${API_BASE_URL}/api/bases`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -70,8 +71,8 @@ function Dashboard() {
       const queryString = params.toString();
 
       const url = queryString
-        ? `http://127.0.0.1:5000/api/dashboard?${queryString}`
-        : "http://127.0.0.1:5000/api/dashboard";
+        ? `${API_BASE_URL}/api/dashboard?${queryString}`
+        : `${API_BASE_URL}/api/dashboard`;
 
       const response = await fetch(url, {
         headers: {
